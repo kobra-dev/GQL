@@ -23,7 +23,8 @@ type Mutation {
     projectJson: String
   ): Boolean!
 }
-type Project {
+
+type Project @collection(name: "projects") {
   user: String!
   name: String!
   shortname: String!
