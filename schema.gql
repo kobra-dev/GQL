@@ -1,17 +1,7 @@
-directive @specifiedBy(url: String!) on SCALAR
 type AddProjectStatus {
   id: String!
   success: Boolean!
 }
-
-type Dataset {
-  id: ID!
-  user: String!
-  name: String!
-  description: String
-}
-
-scalar DateTime
 
 type EditProjectStatus {
   success: Boolean!
@@ -34,17 +24,6 @@ type Mutation {
     id: String!
   ): EditProjectStatus!
   removeProject(id: String!): EditProjectStatus!
-  addDataset(newDatasetData: NewDatasetInput!): Dataset!
-  editDataset(newDatasetData: NewDatasetInput!, id: Float!): Dataset!
-  editDatasetContents(newContents: String!, id: Float!): Boolean!
-  removeDataset(id: Float!): Boolean!
-}
-
-input NewDatasetInput {
-  user: String!
-  name: String!
-  description: String
-  b64Data: String
 }
 
 type Project {
@@ -61,14 +40,4 @@ type Query {
   project(id: String!): Project
   projects: [Project!]!
   getProjectsByUser(user: String!): [Project!]!
-  dataset(id: Float!): Dataset!
-  datasets: [Dataset!]!
-  getDatasetContents(id: Float!): String!
-  updates: [Update!]!
-}
-
-type Update {
-  title: String!
-  contents: String!
-  date: DateTime!
 }
