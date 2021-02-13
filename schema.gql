@@ -19,9 +19,9 @@ type Project @collection(name: "projects") {
 }
 
 type Query {
-  project(id: String!): Project
-  projects: [Project!]!
-  getProjectsByUser(user: String!): [Project!]!
+  project(id: String!): Project @resolver(name:"get_project")
+  projects: [Project!]! @resolver(name:"get_projects")
+  getProjectsByUser(user: String!): [Project!] !@resolver(name:"get_projects_by_user")
 }
 
 type Mutation {
