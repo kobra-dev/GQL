@@ -1,6 +1,6 @@
 CreateFunction({
   name: "edit_project",
-  body: Query(Lambda(["param1","param2"],
+  body: Query(Lambda(["user","name","isPublic","description", "projectJson"],
     
   ))
 })
