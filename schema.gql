@@ -1,11 +1,11 @@
 type AddProjectStatus @embedded {
   id: String!
-  success: Boolean!
+  itemWasModified: Boolean!
 }
 
 type EditProjectStatus @embedded {
   success: Boolean!
-  nModified: Float!
+  itemWasModified: Boolean!
 }
 
 type Project @collection(name: "projects") {
@@ -20,7 +20,6 @@ type Project @collection(name: "projects") {
 
 type Query {
   project(id: String!): Project @resolver(name: "get_project")
-  projects: [Project!]! @resolver(name: "get_projects")
   getProjectsByUser(user: String!): [Project!]!
     @resolver(name: "get_projects_by_user")
 }
@@ -34,7 +33,7 @@ type Mutation {
     projectJson: String
   ): AddProjectStatus! @resolver(name: "add_project")
   editProject(
-    name: Strings
+    name: String
     description: String
     isPublic: Boolean
     projectJson: String
