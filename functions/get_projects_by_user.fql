@@ -1,0 +1,6 @@
+CreateFunction({
+  name: "get_projects_by_user",
+  body: Query(Lambda(["param1","param2"],
+    
+  ))
+})
