@@ -31,7 +31,7 @@ type Mutation {
     isPublic: Boolean!
     description: String
     projectJson: String
-  ): AddProjectStatus!
+  ): AddProjectStatus! @resolver()
   editProject(
     name: String
     description: String
