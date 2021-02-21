@@ -1,6 +1,27 @@
 CreateFunction({
   name: "add_project",
   body: Query(Lambda(["user","name","isPublic","description", "projectJson"],
-    
+    Create(
+      Collection("projects"),
+      {
+        user: Var("user"),
+        name: Var("name"),
+        isPublic: Var("isPublic"),
+        description: Var("description"),
+        projectJson: Var("projectJson")
+      }
+    )
+  ))
+})
+
+CreateFunction({
+  name: "add_project",
+  body: Query(Lambda(["user","name","isPublic","description", "projectJson"],
+    Create(
+      Collection("projects"),
+      Object(
+        Array{}
+      )
+    )
   ))
 })

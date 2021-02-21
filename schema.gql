@@ -15,7 +15,7 @@ type Project @collection(name: "projects") {
   isPublic: Boolean!
   description: String
   projectJson: String
-  lastModified: DateTime!
+  lastModified: Time!
 }
 
 type Query {
