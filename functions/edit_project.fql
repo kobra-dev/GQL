@@ -1,6 +1,0 @@
-CreateFunction({
-  name: "edit_project",
-  body: Query(Lambda(["user","name","isPublic","description", "projectJson"],
-    
-  ))
-})

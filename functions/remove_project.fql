@@ -1,6 +1,0 @@
-CreateFunction({
-  name: "remove_project",
-  body: Query(Lambda(["id"], {
-    Delete(Ref(Collection("projects"), Var("id")))
-  }))
-})
