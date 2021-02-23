@@ -1,7 +1,0 @@
-CreateFunction({
-  name: "get_project",
-  body: Query(Lambda(["id"],{
-    Get(Ref(Collection("projects"), Var("id)))
-  })
-  )
-})

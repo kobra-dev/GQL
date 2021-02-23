@@ -17,7 +17,7 @@ mutation {
 
 ```
 
-# Update Project
+## Update Project
 
 ```
 mutation {
@@ -37,12 +37,26 @@ mutation {
 
 ```
 
-# Delete Project
+## Delete Project
 
 ```
 mutation {
   deleteProject(id: "id") {
     _id
+  }
+}
+
+```
+
+## Get Project by ID
+
+```
+query {
+  findProjectByID(
+    id:""
+  ){
+    name
+    user
   }
 }
 
