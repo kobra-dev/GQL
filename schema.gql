@@ -1,8 +1,3 @@
-type EditProjectStatus @embedded {
-  success: Boolean!
-  itemWasModified: Boolean!
-}
-
 type Project @collection(name: "projects") {
   user: String!
   name: String!
