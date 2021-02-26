@@ -8,6 +8,6 @@ type Project @collection(name: "projects") {
 
 type Query {
   project(id: String!): Project @resolver(name: "get_project")
-  getProjectsByUser(user: String!): [Project!]!
+  getProjectsByUser(user: String!): [String!]!
     @resolver(name: "get_projects_by_user")
 }

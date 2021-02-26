@@ -1,0 +1,28 @@
+{
+  name: "projects_by_user",
+  unique: false,
+  serialized: true,
+  source: "projects",
+  terms: [
+    {
+      field: ["data", "user"]
+    }
+  ],
+  values: [
+    {
+      field: ["data", "user"]
+    },
+    {
+      field: ["data", "name"]
+    },
+    {
+      field: ["data", "isPublic"]
+    },
+    {
+      field: ["data", "description"]
+    },
+    {
+      field: ["data", "projectJson"]
+    }
+  ]
+}
