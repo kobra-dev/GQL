@@ -1,6 +1,9 @@
-CreateFunction({
-  name: "get_projects_by_user",
-  body: Query(Lambda(["user"],
-    
-  ))
-})
+Query(Lambda(["user"],
+    Paginate(
+      Match(
+        Index("projects_by_user"), 
+        "pt5"
+      )
+    )
+  )
+)
