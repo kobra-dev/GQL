@@ -1,9 +1,4 @@
-Query(Lambda(["user"],
-    Paginate(
-      Match(
-        Index("projects_by_user"), 
-        "pt5"
-      )
-    )
+Query(Lambda("user",
+    Paginate(Match(Index("projects_by_user"), Var("user")))
   )
 )
