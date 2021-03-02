@@ -8,5 +8,5 @@ type Project @collection(name: "projects") {
 
 type Query {
   getProjectsByUser(user: String!): [Project!]!
-    @resolver(name: "get_projects_by_user")
+    @resolver(name: "get_projects_by_user", paginated: true)
 }
